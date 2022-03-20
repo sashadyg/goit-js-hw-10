@@ -88,3 +88,12 @@ p {
   width: 55px;
   height: 30px;
 }
+
+.country-list__item {
+  display: flex;
+  align-items: center;
+}
+
+.country-list__item--title {
+  padding-left: 15px;
+}
