@@ -26,13 +26,15 @@ function inputInfo() {
                 infoOfCountryRef.insertAdjacentHTML('beforeend', markupInfo(country))
             } else if (country.length > 10) {
                 Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
-            }
-
-            if (country.length >= 2 && country.length <= 10) {
+            } else {
                 listOfCountryRef.insertAdjacentHTML('beforeend', markupList(country))
             }
 
-        }).catch(Notiflix.Notify.failure('Oops, there is no country with that name'))
+        }).catch(ifWrongNameAlert)
+}
+
+function ifWrongNameAlert() {
+    Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 
 function markupInfo(country) {
